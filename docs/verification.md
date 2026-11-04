@@ -7,6 +7,7 @@
 | 在全新 Python 3.11 虚拟环境 `pip install -e ".[dev]"` | 成功 |
 | `python -m pip check` | 无损坏依赖 |
 | `python -m unittest discover -s tests -v` | **290 项全部通过** |
+| 独立 Python 3.14.3 虚拟环境安装与全量测试 | **另一次 290 项全部通过** |
 | `tests/test_bootstrap.ps1` | 隔离 dry-run 通过，无状态/日志写入 |
 | `tests/test_task_scripts.ps1` | 启动安装 dry-run 通过，未写注册表 |
 | 10 个前端模块及 Playwright 配置的 Node 语法检查 | 11 项通过 |
@@ -32,4 +33,4 @@
 
 本次没有使用真实账号向联系人发消息，没有重新登录微信，没有调用付费模型，也没有切换旧开机启动或守护进程。未执行历史 Playwright/视觉截图测试。真实收发、云模型连通性和 VM 仲裁需在本人选择启用范围后分别验收。
 
-远端 Windows/Linux、Python 3.11/3.14 验证由仓库 Actions 执行；以对应提交的运行结果为准。
+远端 Windows/Linux、Python 3.11/3.14 验证由仓库 Actions 执行；以对应提交的运行结果为准。首次上传已触发 [Actions 检查](https://github.com/wxa13937718719/wechat-ai-workbench/actions/runs/41878563401)，交付记录更新时仍在等待 GitHub runner，尚无远端测试结论。本次补记仅改文档，不重复触发检查。
