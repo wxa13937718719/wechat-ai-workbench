@@ -1,0 +1,18 @@
+{
+  "daemonMode": "shadow",
+  "pollIntervalSeconds": 30,
+  "autoStartDocker": false,
+  "autoStartContainer": false,
+  "openQrAutomatically": false,
+  "unlockKeyword": "解锁AI",
+  "testChatIds": [],
+  "groupChatIds": [],
+  "groupChatNames": {},
+  "groupMentionPatterns": ["@AI助手", "有没有AI"],
+  "textModel": "Qwen/Qwen2.5-7B-Instruct",
+  "visionModel": "Qwen/Qwen3-VL-8B-Instruct",
+  "maxVisionImages": 10,
+  "maxReplyChars": 500,
+  "perChatMinIntervalSeconds": 8,
+  "perChatHourlyLimit": 30
+}

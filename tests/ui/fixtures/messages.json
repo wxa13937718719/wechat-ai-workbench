@@ -1,0 +1,96 @@
+{
+  "student-a": [
+    {
+      "id": "101",
+      "chatId": "student-a",
+      "type": 1,
+      "direction": "incoming",
+      "timestamp": 1790000000,
+      "sender": {"id": "student-a", "name": "林同学", "avatar": ""},
+      "display": {"kind": "text", "text": "AI 学长在吗？想问下选课的事情"},
+      "media": []
+    },
+    {
+      "id": "102",
+      "chatId": "student-a",
+      "type": 1,
+      "direction": "outgoing",
+      "timestamp": 1790000060,
+      "sender": {"id": "self", "name": "我", "avatar": ""},
+      "display": {"kind": "text", "text": "在呢，你把具体问题发来，我先帮你捋捋～\n\n——该内容由AI生成"},
+      "media": []
+    },
+    {
+      "id": "103",
+      "chatId": "student-a",
+      "type": 1,
+      "direction": "incoming",
+      "timestamp": 1790000120,
+      "sender": {"id": "student-a", "name": "林同学", "avatar": ""},
+      "display": {"kind": "text", "text": "这两门课时间撞了，应该怎么选？"},
+      "media": []
+    },
+    {
+      "id": "104",
+      "chatId": "student-a",
+      "type": 1,
+      "direction": "outgoing",
+      "timestamp": 1790000180,
+      "sender": {"id": "self", "name": "我", "avatar": ""},
+      "display": {"kind": "text", "text": "先看培养方案里哪门是必修，再比较开课频率。具体替代关系得以教务系统和老师通知为准。\n\n——该内容由AI生成"},
+      "media": []
+    },
+    {
+      "id": "105",
+      "chatId": "student-a",
+      "type": 10000,
+      "direction": "incoming",
+      "timestamp": 1790000240,
+      "sender": {"id": "system", "name": "系统", "avatar": ""},
+      "display": {"kind": "system", "text": "09:04"},
+      "media": []
+    },
+    {
+      "id": "106",
+      "chatId": "student-a",
+      "type": 49,
+      "direction": "incoming",
+      "timestamp": 1790000300,
+      "sender": {"id": "student-a", "name": "林同学", "avatar": ""},
+      "display": {"kind": "file", "fileName": "培养方案.pdf", "size": 245760},
+      "media": [{"id": "106:file", "kind": "file", "fileName": "培养方案.pdf", "size": 245760, "available": false}]
+    },
+    {
+      "id": "107",
+      "chatId": "student-a",
+      "type": 1,
+      "direction": "outgoing",
+      "timestamp": 1790000360,
+      "sender": {"id": "self", "name": "我", "avatar": ""},
+      "display": {"kind": "text", "text": "收到，我先按这个方案看。涉及最终选课决定，还是要你本人确认一下哈。\n\n——该内容由AI生成"},
+      "media": []
+    },
+    {
+      "id": "108",
+      "chatId": "student-a",
+      "type": 1,
+      "direction": "incoming",
+      "timestamp": 1790000400,
+      "sender": {"id": "student-a", "name": "林同学", "avatar": ""},
+      "display": {"kind": "text", "text": "好，那就这么说定啦"},
+      "media": []
+    }
+  ],
+  "class-group@chatroom": [
+    {
+      "id": "201",
+      "chatId": "class-group@chatroom",
+      "type": 1,
+      "direction": "incoming",
+      "timestamp": 1790000000,
+      "sender": {"id": "member-a", "name": "小周", "avatar": ""},
+      "display": {"kind": "text", "text": "今晚有人去操场吗"},
+      "media": []
+    }
+  ]
+}

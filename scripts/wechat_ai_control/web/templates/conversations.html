@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}微信{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="/static/css/chat-list.css?v=1">
+  <link rel="stylesheet" href="/static/css/messages.css?v=1">
+  <link rel="stylesheet" href="/static/css/composer.css?v=1">
+  <link rel="stylesheet" href="/static/css/ai-drawer.css?v=1">
+{% endblock %}
+{% block content %}
+<div class="wechat-shell" data-app="conversations">
+  <nav class="navigation-rail" data-region="navigation-rail" aria-label="主导航">
+    <div class="profile-avatar" aria-label="当前用户">王</div>
+    <a class="rail-button is-active" href="/conversations" aria-label="聊天" title="聊天">
+      <i data-lucide="message-square-more" aria-hidden="true"></i>
+    </a>
+    <span class="rail-spacer"></span>
+    <button class="rail-button" id="toggle-control" type="button" aria-label="打开 AI 控制" title="AI 控制">
+      <i data-lucide="bot" aria-hidden="true"></i>
+      <span id="ai-status-dot" class="ai-status-dot is-warning" aria-hidden="true"></span>
+    </button>
+  </nav>
+
+  <aside class="conversation-sidebar" data-region="conversation-sidebar" aria-label="会话列表">
+    <div class="sidebar-toolbar">
+      <label class="search-field" for="chat-search">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input id="chat-search" type="search" aria-label="搜索会话" placeholder="搜索" autocomplete="off">
+      </label>
+      <button class="square-button" type="button" aria-label="发起会话" title="暂不支持发起新会话" disabled>
+        <i data-lucide="plus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id="chat-list" class="conversation-list" role="listbox" aria-label="最近会话" aria-busy="true">
+      <div class="list-status">正在加载会话</div>
+    </div>
+  </aside>
+  <div id="sidebar-resizer" class="sidebar-resizer" role="separator" aria-label="调整会话列表宽度" aria-orientation="vertical" tabindex="0"></div>
+
+  <section class="chat-workspace" aria-label="聊天内容">
+    <header id="chat-header" class="chat-header" data-region="chat-header">
+      <div>
+        <h1 id="chat-title">选择一个聊天</h1>
+        <p id="chat-subtitle" hidden></p>
+      </div>
+    </header>
+    <div id="chat-thread" class="message-list" data-region="message-list" aria-live="polite">
+      <div class="empty-state">从左侧选择一个会话</div>
+    </div>
+    <button id="new-message-indicator" class="new-message-indicator" type="button" hidden></button>
+    <section class="composer" data-region="composer" aria-label="消息输入区">
+      <div id="composer-tools" class="composer-tools" aria-label="消息工具" hidden>
+        <button class="icon-button" type="button" data-capability="sendSticker" aria-label="发送表情" title="发送表情">
+          <i data-lucide="smile" aria-hidden="true"></i>
+        </button>
+        <button class="icon-button" type="button" data-capability="sendImage" aria-label="发送图片" title="发送图片" hidden>
+          <i data-lucide="image" aria-hidden="true"></i>
+        </button>
+        <button class="icon-button" type="button" data-capability="sendFile" aria-label="发送文件" title="发送文件">
+          <i data-lucide="folder" aria-hidden="true"></i>
+        </button>
+      </div>
+      <input id="media-file-input" type="file" hidden>
+      <textarea id="manual-text" aria-label="输入消息" rows="1" disabled></textarea>
+      <div class="composer-actions">
+        <span id="composer-status" class="composer-status" aria-live="polite"></span>
+        <button id="manual-send" class="send-button" type="button" disabled>发送(S)</button>
+      </div>
+    </section>
+  </section>
+
+  <aside id="control-tabs" class="ai-drawer" data-region="ai-drawer" role="dialog" aria-modal="true" aria-labelledby="ai-drawer-title" aria-hidden="true" hidden>
+    <header class="drawer-header">
+      <h2 id="ai-drawer-title">AI 控制</h2>
+      <button class="icon-button" id="close-control" type="button" aria-label="关闭 AI 控制" title="关闭">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </header>
+    <section class="ai-context" aria-label="当前会话 AI 状态">
+      <div class="ai-context-title">
+        <strong id="ai-chat-name">未选择会话</strong>
+        <span id="ai-unlock-state" class="state-badge">未解锁</span>
+      </div>
+      <div class="ai-lock-row">
+        <button id="ai-grant-chat" class="primary-button" type="button" disabled>手动授权</button>
+        <button id="ai-revoke-chat" class="secondary-button" type="button" disabled>手动撤销</button>
+        <span class="ai-lock-hint">授权来源：手动授权或对方关键词；手动撤销后，对方关键词也不能重新解锁。</span>
+      </div>
+      <dl class="ai-facts">
+        <div><dt>回复方式</dt><dd id="ai-reply-mode">-</dd></div>
+        <div><dt>文本模型</dt><dd id="ai-model-route">-</dd></div>
+        <div><dt>当前规则</dt><dd id="ai-rule-summary">-</dd></div>
+      </dl>
+      <div id="ai-open-actions" class="ai-open-actions" aria-live="polite"></div>
+    </section>
+    <section id="command-box" class="command-box" aria-label="自然语言修改">
+      <label for="command-text">自然语言要求</label>
+      <textarea id="command-text" rows="5"></textarea>
+      <button id="command-preview" class="primary-button" type="button">预览修改</button>
+    </section>
+    <section id="ai-diff" class="ai-diff" aria-label="修改预览" hidden>
+      <div id="ai-operation-list" class="ai-operation-list"></div>
+      <label id="ai-risk-confirm" class="risk-confirm" hidden>
+        <input id="ai-risk-checkbox" type="checkbox">
+        <span>确认执行高风险操作</span>
+      </label>
+      <div class="diff-actions">
+        <button id="ai-cancel-command" type="button">取消</button>
+        <button id="ai-apply-command" class="primary-button" type="button">应用修改</button>
+      </div>
+    </section>
+    <p id="ai-drawer-status" class="drawer-status" aria-live="polite"></p>
+    <nav class="drawer-links" aria-label="更多 AI 设置">
+      <a href="/rules">全部规则</a>
+      <a href="/models">模型</a>
+      <a href="/audit">审计</a>
+    </nav>
+  </aside>
+
+  <div class="unsupported-viewport" role="status">
+    <strong>窗口太窄</strong>
+    <span>请将窗口宽度调整到 960px 以上。</span>
+  </div>
+</div>
+{% endblock %}

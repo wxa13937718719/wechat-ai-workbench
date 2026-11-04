@@ -1,0 +1,115 @@
+[
+  {
+    "id": "student-a",
+    "name": "林同学",
+    "kind": "direct",
+    "updatedAt": 1790000400,
+    "lastActivityAt": "2026-09-20T09:00:00+08:00",
+    "lastMessageId": "108",
+    "lastMessagePreview": "那就这么说定啦",
+    "unreadCount": 0
+  },
+  {
+    "id": "class-group@chatroom",
+    "name": "示例学习群",
+    "kind": "group",
+    "updatedAt": 1790000340,
+    "lastActivityAt": "2026-09-20T08:59:00+08:00",
+    "lastMessageId": "207",
+    "lastMessagePreview": "今晚有人去操场吗",
+    "lastSenderName": "小周",
+    "unreadCount": 12,
+    "pinned": true,
+    "avatarMembers": ["", "", "", "", ""]
+  },
+  {
+    "id": "project-group@chatroom",
+    "name": "课程项目讨论组",
+    "kind": "group",
+    "updatedAt": 1790000100,
+    "lastActivityAt": "2026-09-20T08:55:00+08:00",
+    "lastMessageId": "304",
+    "lastMessagePreview": "文档我放群文件了",
+    "lastSenderName": "成员甲",
+    "unreadCount": 3,
+    "muted": true,
+    "avatarMembers": ["", "", ""]
+  },
+  {
+    "id": "student-b",
+    "name": "郭同学",
+    "kind": "direct",
+    "updatedAt": 1789999800,
+    "lastActivityAt": "2026-09-20T08:50:00+08:00",
+    "lastMessageId": "402",
+    "lastMessagePreview": "推送已经重新导入",
+    "unreadCount": 1
+  },
+  {
+    "id": "draft-chat",
+    "name": "胡同学",
+    "kind": "direct",
+    "updatedAt": 1789999200,
+    "lastActivityAt": "2026-09-20T08:40:00+08:00",
+    "lastMessageId": "501",
+    "lastMessagePreview": "表情包收到了",
+    "draft": "我再看看这个",
+    "unreadCount": 0
+  },
+  {
+    "id": "study-group@chatroom",
+    "name": "期末复习互助群",
+    "kind": "group",
+    "updatedAt": 1789916400,
+    "lastActivityAt": "2026-09-19T09:00:00+08:00",
+    "lastMessageId": "603",
+    "lastMessagePreview": "第二章重点发出来了",
+    "lastSenderName": "小陈",
+    "unreadCount": 0,
+    "avatarMembers": ["", "", "", ""]
+  },
+  {
+    "id": "student-c",
+    "name": "贺同学",
+    "kind": "direct",
+    "updatedAt": 1789912800,
+    "lastActivityAt": "2026-09-19T08:00:00+08:00",
+    "lastMessageId": "701",
+    "lastMessagePreview": "好嘞，谢谢学长",
+    "unreadCount": 0
+  },
+  {
+    "id": "club-group@chatroom",
+    "name": "校园技术社",
+    "kind": "group",
+    "updatedAt": 1789826400,
+    "lastActivityAt": "2026-09-18T08:00:00+08:00",
+    "lastMessageId": "801",
+    "lastMessagePreview": "周末活动报名",
+    "lastSenderName": "活动组",
+    "unreadCount": 0,
+    "avatarMembers": ["", "", "", "", "", ""]
+  },
+  {
+    "id": "student-d",
+    "name": "周同学",
+    "kind": "direct",
+    "updatedAt": 1789221600,
+    "lastActivityAt": "2026-09-11T08:00:00+08:00",
+    "lastMessageId": "901",
+    "lastMessagePreview": "下周见",
+    "unreadCount": 0
+  },
+  {
+    "id": "family-group@chatroom",
+    "name": "快乐一家人",
+    "kind": "group",
+    "updatedAt": 1786633200,
+    "lastActivityAt": "2026-08-12T09:00:00+08:00",
+    "lastMessageId": "1001",
+    "lastMessagePreview": "记得按时吃饭",
+    "lastSenderName": "家人",
+    "unreadCount": 0,
+    "avatarMembers": ["", "", ""]
+  }
+]

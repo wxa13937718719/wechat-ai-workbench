@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}审计记录{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/control-pages.css?v=1">{% endblock %}
+{% block content %}
+<section class="panel control-page" data-control-page="audit">
+  <header class="page-heading"><div><p class="eyebrow">AI 控制台</p><h1>审计记录</h1><p>查看模型路由、规则修改、人工发送和运行状态变更。</p></div><button id="reload-audit" class="text-button" type="button">刷新</button></header>
+  <section class="settings-panel"><div id="audit-list" class="audit-list"><p class="muted">正在读取</p></div></section>
+</section>
+<script type="module" src="/static/js/control-pages.js?v=1"></script>
+{% endblock %}

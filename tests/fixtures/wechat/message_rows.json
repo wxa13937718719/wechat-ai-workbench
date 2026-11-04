@@ -1,0 +1,8 @@
+[
+  {"localId":1,"chatId":"wxid_friend","sender":"wxid_friend","senderName":"朋友","type":1,"content":"文本消息","timestamp":"2026-09-20T00:00:01+00:00","isSelf":false},
+  {"localId":2,"chatId":"wxid_friend","sender":"self","senderName":"我","type":3,"content":"[图片]","timestamp":"2026-09-20T00:00:02+00:00","isSelf":true},
+  {"localId":3,"chatId":"wxid_friend","sender":"wxid_friend","senderName":"朋友","type":47,"content":"https://example.test/sticker.gif","timestamp":"2026-09-20T00:00:03+00:00","isSelf":false},
+  {"localId":4,"chatId":"wxid_friend","sender":"wxid_friend","senderName":"朋友","type":34,"content":"[语音]","timestamp":"2026-09-20T00:00:04+00:00","isSelf":false},
+  {"localId":5,"chatId":"wxid_friend","sender":"wxid_friend","senderName":"朋友","type":49,"content":"<appmsg><title>示例文件</title></appmsg>","timestamp":"2026-09-20T00:00:05+00:00","isSelf":false},
+  {"localId":6,"chatId":"group@chatroom","sender":"wxid_member","senderName":"成员甲","type":10000,"content":"系统消息","timestamp":"2026-09-20T00:00:06+00:00","isSelf":false}
+]

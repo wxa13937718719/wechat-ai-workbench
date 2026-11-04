@@ -1,0 +1,378 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  background: var(--color-chat);
+  font: 14px/1.5 var(--font-ui);
+}
+
+button,
+input,
+textarea {
+  color: inherit;
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 20px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.app-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.app-nav a,
+.drawer-tabs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body:has(.wechat-shell) .topbar {
+  display: none;
+}
+
+#app-main {
+  width: 100%;
+  height: calc(100vh - 56px);
+}
+
+body:has(.wechat-shell) #app-main {
+  height: 100vh;
+}
+
+.panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.wechat-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--rail-width) minmax(var(--sidebar-min-width), var(--sidebar-width)) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  width: 100%;
+  height: 100%;
+  min-width: 960px;
+  overflow: hidden;
+}
+
+.navigation-rail {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--rail-width);
+  padding: 20px 0 16px;
+  background: var(--color-rail);
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  color: #ffffff;
+  background: #4b9a6a;
+  border-radius: var(--radius-avatar);
+}
+
+.rail-button,
+.icon-button,
+.square-button {
+  display: inline-grid;
+  place-items: center;
+  width: var(--icon-button-size);
+  height: var(--icon-button-size);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: transparent;
+  cursor: pointer;
+}
+
+.rail-button {
+  width: 44px;
+  height: 44px;
+  color: #a6a6a6;
+}
+
+.rail-button:hover,
+.rail-button:focus-visible {
+  color: #ffffff;
+  background: var(--color-rail-hover);
+}
+
+.rail-button.is-active {
+  color: var(--color-wechat);
+}
+
+.rail-spacer {
+  flex: 1;
+}
+
+.conversation-sidebar {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  background: var(--color-sidebar);
+  border-right: 1px solid var(--color-line);
+}
+
+.sidebar-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  gap: 8px;
+  align-items: center;
+  height: var(--chat-header-height);
+  padding: 0 10px;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 28px;
+  padding: 0 8px;
+  color: #777777;
+  background: #dcdcdc;
+  border-radius: var(--radius-small);
+}
+
+.search-field svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+
+.search-field input {
+  min-width: 0;
+  width: 100%;
+  padding: 0 0 0 6px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.square-button {
+  width: 28px;
+  height: 28px;
+  background: #d8d8d8;
+}
+
+.conversation-list {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.conversation-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.sidebar-resizer {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--rail-width) + var(--sidebar-width) - 3px);
+  width: 6px;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.sidebar-resizer:hover,
+.sidebar-resizer:focus-visible,
+.wechat-shell.is-resizing .sidebar-resizer {
+  background: rgb(7 193 96 / 24%);
+}
+
+.chat-workspace {
+  position: relative;
+  display: grid;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  grid-template-rows: var(--chat-header-height) minmax(0, 1fr) var(--composer-height);
+  background: var(--color-chat);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.chat-header h1,
+.drawer-header h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.chat-header p {
+  margin: 2px 0 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.message-list {
+  min-height: 0;
+  overflow: hidden auto;
+  padding: 18px 24px;
+}
+
+.composer {
+  display: grid;
+  grid-template-rows: 36px minmax(0, 1fr) 38px;
+  min-height: 110px;
+  padding: 4px 20px 10px;
+  background: #ffffff;
+  border-top: 1px solid var(--color-line);
+}
+
+.composer-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.composer textarea {
+  width: 100%;
+  padding: 4px 0;
+  resize: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  line-height: 1.55;
+}
+
+.composer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.send-button,
+.primary-button {
+  min-width: 88px;
+  height: 30px;
+  padding: 0 16px;
+  color: #166534;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: #e9e9e9;
+  cursor: pointer;
+}
+
+.ai-drawer {
+  position: absolute;
+  z-index: 10;
+  inset: 0 0 0 auto;
+  width: min(var(--drawer-width), calc(100% - var(--rail-width)));
+  padding: 18px;
+  background: #ffffff;
+  border-left: 1px solid var(--color-line);
+  box-shadow: -8px 0 24px rgb(0 0 0 / 10%);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+}
+
+.drawer-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 12px 0 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.drawer-tabs a {
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.command-box {
+  display: grid;
+  gap: 8px;
+}
+
+.command-box label {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.command-box textarea {
+  width: 100%;
+  padding: 8px;
+  resize: vertical;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-small);
+}
+
+.primary-button {
+  justify-self: end;
+  color: #ffffff;
+  background: var(--color-wechat);
+}
+
+.unsupported-viewport {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .wechat-shell > :not(.unsupported-viewport) {
+    visibility: hidden;
+  }
+
+  .unsupported-viewport {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    text-align: center;
+    background: var(--color-chat);
+  }
+
+  .unsupported-viewport span {
+    color: var(--color-muted);
+  }
+}

@@ -1,0 +1,28 @@
+:root {
+  --rail-width: 60px;
+  --sidebar-width: 212px;
+  --sidebar-min-width: 200px;
+  --conversation-row-height: 68px;
+  --chat-header-height: 68px;
+  --composer-height: 170px;
+  --avatar-size: 42px;
+  --message-avatar-size: 36px;
+  --icon-button-size: 32px;
+  --drawer-width: 360px;
+  --color-rail: #2e2e2e;
+  --color-rail-hover: #393939;
+  --color-sidebar: #e8e7e7;
+  --color-sidebar-hover: #dedddd;
+  --color-sidebar-active: #c6c5c5;
+  --color-chat: #f5f5f5;
+  --color-line: #dedede;
+  --color-text: #191919;
+  --color-muted: #999999;
+  --color-green: #95ec69;
+  --color-wechat: #07c160;
+  --color-unread: #fa5151;
+  --color-button: #e9e9e9;
+  --radius-small: 3px;
+  --radius-avatar: 4px;
+  --font-ui: "Microsoft YaHei UI", "PingFang SC", "Segoe UI", sans-serif;
+}

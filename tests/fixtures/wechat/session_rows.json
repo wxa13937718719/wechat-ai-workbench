@@ -1,0 +1,8 @@
+[
+  {"username":"wxid_friend","type":1,"unread_count":1,"summary":"你好","draft":"","status":0,"sort_timestamp":100,"last_msg_locald_id":11,"last_msg_type":1,"last_sender_display_name":"朋友"},
+  {"username":"group@chatroom","type":2,"unread_count":2,"summary":"新消息","draft":"未发送草稿","status":0,"sort_timestamp":90,"last_msg_locald_id":8,"last_msg_type":1,"last_sender_display_name":"成员甲"},
+  {"username":"filehelper","type":1,"unread_count":0,"summary":"文件","draft":"","status":0,"sort_timestamp":80,"last_msg_locald_id":5,"last_msg_type":49,"last_sender_display_name":""},
+  {"username":"gh_official","type":1,"unread_count":9,"summary":"资讯","draft":"","status":0,"sort_timestamp":70,"last_msg_locald_id":4,"last_msg_type":49,"last_sender_display_name":""},
+  {"username":"brandsessionholder","type":1,"unread_count":99,"summary":"公众号","draft":"","status":0,"sort_timestamp":60,"last_msg_locald_id":0,"last_msg_type":0,"last_sender_display_name":""},
+  {"username":"@placeholder_foldgroup","type":1,"unread_count":3,"summary":"折叠的群聊","draft":"","status":0,"sort_timestamp":50,"last_msg_locald_id":0,"last_msg_type":0,"last_sender_display_name":""}
+]

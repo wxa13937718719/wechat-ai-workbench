@@ -1,0 +1,7 @@
+{
+  "apiKey": "",
+  "baseUrl": "https://api.siliconflow.cn/v1",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "visionModel": "Qwen/Qwen3-VL-8B-Instruct",
+  "maxVisionImages": 10
+}

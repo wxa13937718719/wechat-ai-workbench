@@ -1,0 +1,38 @@
+name: Verify project
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  core:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.14']
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/check_publish.py --tracked
+      - name: Windows startup dry-runs
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ./tests/test_bootstrap.ps1
+          if (-not $?) { exit 1 }
+          ./tests/test_task_scripts.ps1
+          if (-not $?) { exit 1 }
+      - run: python -m build
+      - name: Install wheel and check bundled pages
+        run: python scripts/smoke_wheel.py

@@ -1,0 +1,7 @@
+[
+  {"id":1,"username":"wxid_friend","local_type":1,"alias":"friend","verify_flag":0,"remark":"朋友备注","nick_name":"朋友","small_head_url":"https://example.test/friend.jpg","chat_room_notify":0},
+  {"id":2,"username":"group@chatroom","local_type":2,"alias":"","verify_flag":0,"remark":"","nick_name":"测试群","small_head_url":"","chat_room_notify":1},
+  {"id":3,"username":"filehelper","local_type":1,"alias":"","verify_flag":0,"remark":"","nick_name":"文件传输助手","small_head_url":"https://example.test/filehelper.png","chat_room_notify":0},
+  {"id":4,"username":"gh_official","local_type":3,"alias":"official_account","verify_flag":8,"remark":"","nick_name":"示例公众号","small_head_url":"https://example.test/official.jpg","chat_room_notify":0},
+  {"id":5,"username":"wxid_news_friend","local_type":1,"alias":"news_friend","verify_flag":0,"remark":"校园新闻网同学","nick_name":"同学","small_head_url":"","chat_room_notify":0}
+]

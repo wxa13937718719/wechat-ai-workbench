@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}微信 AI 控制台{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/tokens.css?v=1">
+  <link rel="stylesheet" href="/static/css/shell.css?v=1">
+  <link rel="stylesheet" href="/static/css/states.css?v=1">
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <header class="topbar">
+    <strong>微信 AI 控制台</strong>
+    <nav class="app-nav">
+      <a href="/">总览</a>
+      <a href="/conversations">会话</a>
+      <a href="/rules">规则</a>
+      <a href="/models">模型</a>
+      <a href="/commands">指令</a>
+      <a href="/audit">审计</a>
+      <a href="/settings">设置</a>
+    </nav>
+  </header>
+  <main id="app-main">{% block content %}{% endblock %}</main>
+  <script src="/static/js/vendor/lucide.min.js?v=1" defer></script>
+  <script type="module" src="/static/js/app.js?v=1"></script>
+</body>
+</html>

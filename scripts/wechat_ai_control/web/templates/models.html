@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}模型配置{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/models.css?v=1">{% endblock %}
+{% block content %}
+<section class="panel model-console" data-app="models">
+  <header class="page-heading">
+    <div><p class="eyebrow">AI 控制台</p><h1>模型配置</h1><p>为不同任务指定提供商和模型。密钥只保存到本机凭据存储，不会回显。</p></div>
+    <a class="text-button" href="/conversations">返回会话</a>
+  </header>
+  <div class="model-grid">
+    <section class="settings-panel">
+      <div class="section-heading"><div><h2>提供商</h2><p>添加兼容 OpenAI 接口的服务，或连接本机 Ollama。</p></div><button id="refresh-providers" class="icon-text-button" type="button">刷新</button></div>
+      <div id="provider-list" class="provider-list" aria-live="polite"><p class="muted">正在读取提供商</p></div>
+      <form id="provider-form" class="provider-form">
+        <h3>添加或更新</h3>
+        <div class="form-grid">
+          <label>标识<input name="id" required pattern="[a-zA-Z0-9_-]+" placeholder="siliconflow"></label>
+          <label>名称<input name="name" required placeholder="SiliconFlow"></label>
+          <label>类型<select name="kind"><option value="siliconflow">SiliconFlow</option><option value="openai_compatible">OpenAI 兼容</option><option value="ollama">Ollama</option></select></label>
+          <label class="wide">接口地址<input name="base_url" required placeholder="https://api.siliconflow.cn"></label>
+          <label class="wide">API Key <span class="muted">留空表示不修改</span><input name="api_key" type="password" autocomplete="new-password" placeholder="仅写入本机凭据存储"></label>
+        </div>
+        <div class="form-actions"><button class="primary-button" type="submit">保存提供商</button><span id="provider-status" class="muted" aria-live="polite"></span></div>
+      </form>
+    </section>
+    <section class="settings-panel">
+      <div class="section-heading"><div><h2>任务路由</h2><p>回复、看图和自然语言指令可以使用不同模型。</p></div></div>
+      <form id="route-form" class="route-form">
+        <div id="route-list" class="route-list"><p class="muted">正在读取路由</p></div>
+        <div class="form-actions"><button class="primary-button" type="submit">保存路由</button><span id="route-status" class="muted" aria-live="polite"></span></div>
+      </form>
+    </section>
+  </div>
+</section>
+<script type="module" src="/static/js/models.js?v=1"></script>
+{% endblock %}

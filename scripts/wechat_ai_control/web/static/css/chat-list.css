@@ -1,0 +1,98 @@
+.conversation-item.is-pinned {
+  background: #d9d8d8;
+}
+
+.conversation-item.is-pinned:hover {
+  background: #d1d0d0;
+}
+
+.conversation-item.is-pinned.is-active,
+.conversation-item.is-active {
+  background: var(--color-sidebar-active);
+}
+
+.conversation-item.is-muted .conversation-preview {
+  color: #aaaaaa;
+}
+
+.draft-prefix {
+  color: #d94747;
+}
+
+.muted-unread {
+  width: 8px;
+  height: 8px;
+  margin-top: 11px;
+  background: #b8b8b8;
+  border-radius: 50%;
+}
+
+.conversation-item.is-keyboard-active {
+  box-shadow: inset 0 0 0 1px #a5a5a5;
+}
+
+.avatar {
+  position: relative;
+}
+
+.avatar-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar img + .avatar-fallback {
+  display: none;
+}
+
+.avatar img.is-broken {
+  display: none;
+}
+
+.avatar img.is-broken + .avatar-fallback {
+  display: grid;
+}
+
+.group-avatar-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 1px;
+  padding: 2px;
+  background: #d6d6d6;
+}
+
+.group-avatar-grid.grid-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.group-avatar-grid.grid-9 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.group-avatar-grid img,
+.group-avatar-cell {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  overflow: hidden;
+  background: #9ba8b2;
+}
+
+.group-avatar-cell {
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 8px;
+}
+
+.conversation-item .conversation-name,
+.conversation-item .conversation-preview,
+.conversation-item .conversation-time {
+  display: block;
+}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}运行设置{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/control-pages.css?v=1">{% endblock %}
+{% block content %}
+<section class="panel control-page" data-control-page="settings">
+  <header class="page-heading"><div><p class="eyebrow">AI 控制台</p><h1>运行设置</h1><p>控制本机 daemon 是否暂停自动回复。</p></div></header>
+  <section class="settings-panel"><div id="runtime-status" class="runtime-status">正在读取运行状态</div><div id="runtime-config-status" class="runtime-status" aria-live="polite">正在读取配置生效状态</div><div id="interaction-status" class="runtime-status interaction-status" aria-live="polite">正在读取虚拟机人工协同状态</div><div id="vm-diagnostics" class="runtime-status interaction-status" aria-live="polite">正在读取虚拟机诊断</div><div id="transfer-status" class="runtime-status" aria-live="polite">正在读取文件传输状态</div><p class="muted">文件传输：仅观察，未接入文件发送</p><form id="runtime-form" class="stack-form"><label class="check-row"><input id="runtime-paused" type="checkbox">暂停自动回复</label><label>暂停原因<input id="runtime-reason" placeholder="可选"></label><div class="form-actions"><button class="primary-button" type="submit">保存运行状态</button><span id="runtime-message" class="muted" aria-live="polite"></span></div></form></section>
+</section>
+<script type="module" src="/static/js/control-pages.js?v=1"></script>
+{% endblock %}

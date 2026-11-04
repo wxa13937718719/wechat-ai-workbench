@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}自然语言指令{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/control-pages.css?v=1">{% endblock %}
+{% block content %}
+<section class="panel control-page" data-control-page="commands">
+  <header class="page-heading"><div><p class="eyebrow">AI 控制台</p><h1>自然语言指令</h1><p>先预览变更，再决定是否应用；发送、锁定等高风险操作始终需要确认。</p></div></header>
+  <section class="settings-panel"><form id="command-form" class="stack-form"><label>目标会话 ID<input id="command-chat-id" required placeholder="从会话列表复制联系人或群 ID"></label><label>你的要求<textarea id="command-input" rows="5" required placeholder="例如：以后对当前联系人更活泼一点"></textarea></label><div class="form-actions"><button class="primary-button" type="submit">预览指令</button><span id="command-status" class="muted" aria-live="polite"></span></div></form></section>
+  <section id="command-preview" class="settings-panel" hidden><h2>变更预览</h2><div id="command-operations" class="operation-list"></div><label id="command-risk" class="risk-confirm" hidden><input id="command-risk-check" type="checkbox">确认执行高风险操作</label><div class="form-actions"><button id="command-apply" class="primary-button" type="button">应用</button></div></section>
+</section>
+<script type="module" src="/static/js/control-pages.js?v=1"></script>
+{% endblock %}

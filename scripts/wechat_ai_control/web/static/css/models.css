@@ -1,0 +1,149 @@
+.model-console {
+  max-width: 1180px;
+}
+
+.page-heading,
+.section-heading,
+.provider-row,
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-heading {
+  margin-bottom: 24px;
+}
+
+.page-heading h1,
+.page-heading p,
+.section-heading h2,
+.section-heading p,
+.provider-form h3 {
+  margin: 0;
+}
+
+.page-heading p:not(.eyebrow),
+.section-heading p {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--color-wechat);
+  font-size: 12px;
+}
+
+.text-button,
+.icon-text-button {
+  color: #576b95;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
+  gap: 18px;
+}
+
+.settings-panel {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-small);
+  background: #ffffff;
+}
+
+.provider-list,
+.route-list {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 24px;
+}
+
+.provider-row {
+  padding: 10px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-small);
+}
+
+.provider-main {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.provider-main span,
+.provider-model-count,
+.muted {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.provider-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.provider-actions button {
+  padding: 4px 8px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-small);
+  background: #fff;
+  cursor: pointer;
+}
+
+.provider-form,
+.route-form {
+  display: grid;
+  gap: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 4px;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.form-grid .wide {
+  grid-column: 1 / -1;
+}
+
+.form-grid input,
+.form-grid select,
+.route-row select {
+  min-width: 0;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-small);
+  background: #fff;
+}
+
+.route-row {
+  display: grid;
+  grid-template-columns: 82px minmax(120px, .8fr) minmax(160px, 1.2fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.primary-button {
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .model-grid { grid-template-columns: 1fr; }
+}

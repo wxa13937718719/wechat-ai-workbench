@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}规则配置{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/css/control-pages.css?v=1">{% endblock %}
+{% block content %}
+<section class="panel control-page" data-control-page="rules">
+  <header class="page-heading"><div><p class="eyebrow">AI 控制台</p><h1>回复规则</h1><p>编辑全局人格和现有联系人/群聊规则。</p></div></header>
+  <section class="settings-panel"><form id="global-rule-form" class="stack-form"><label>全局回复风格<textarea id="global-instruction" rows="5" placeholder="例如：活泼、简洁，模仿日常语气"></textarea></label><label>默认回复方式<select id="global-reply-mode"><option value="auto">自动回复</option><option value="manual">人工处理</option><option value="silent">不自动回复</option></select></label><div class="form-actions"><button class="primary-button" type="submit">保存全局规则</button><span id="rules-status" class="muted" aria-live="polite"></span></div></form></section>
+  <section class="settings-panel"><div class="section-heading"><h2>已配置规则</h2><button id="reload-rules" class="text-button" type="button">刷新</button></div><div id="rule-list" class="rule-list"><p class="muted">正在读取</p></div></section>
+</section>
+<script type="module" src="/static/js/control-pages.js?v=1"></script>
+{% endblock %}
